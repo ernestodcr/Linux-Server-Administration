@@ -37,5 +37,14 @@ Se procedió a simular un escenario de estructuración de datos corporativos den
 * **Edición de Ficheros en Caliente (`nano`):** Se dominó el uso del editor integrado **GNU Nano** mediante el comando `nano informe_contabilidad.txt`, asimilando las directivas de control por teclado (`Ctrl+O` para la persistencia de datos en disco y `Ctrl+X` para la interrupción/salida segura del editor).
 * **Volcado de Flujos por Terminal (`cat`):** Se implementó el comando **`cat`** para realizar lecturas rápidas de la carga útil del fichero directamente sobre la salida estándar de la consola, optimizando las auditorías de contenido sin necesidad de invocar editores interactivos.
 
+## 👥 5. Gestión de Usuarios y Grupos (Identidades Corporativas)
+Se implementó la estructura de personal de la empresa dentro del servidor, aplicando políticas de organización departamental y blindaje de credenciales mediante el uso de la terminal de comandos:
+
+* **Creación del Departamento (`groupadd`):** Se utilizó la directiva con privilegios elevados **`sudo groupadd contabilidad`** para fundar el grupo lógico destinado al personal financiero.
+* **Aprovisionamiento del Empleado (`useradd`):** Se dio de alta al usuario **`contable1`** mediante el comando avanzado **`sudo useradd -m -g contabilidad contable1`**. El parámetro `-m` forzó la creación automatizada de su directorio de trabajo independiente (`/home/contable1`) y la bandera `-g` consolidó su adscripción inmediata al grupo departamental principal.
+* **Seguridad de Credenciales (`passwd`):** Se fijó el entorno criptográfico de autenticación mediante el comando **`sudo passwd contable1`**, asegurando que la cuenta nazca activa y protegida bajo contraseña.
+* **Auditoría de Identidades (`id`):** Se ejecutó el comando de control **`id contable1`** para validar la consistencia en los identificadores de seguridad (UID/GID), ratificando la integración total del usuario en el sistema.
+
+
 
 
