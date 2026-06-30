@@ -28,4 +28,14 @@ Se procedió a realizar una auditoría de reconocimiento sobre el árbol de alma
   * `/bin` y `/sbin`: Directorios binarios que consolidan las herramientas y comandos esenciales ejecutables del propio sistema operativo.
   * `/boot`: Almacén que custodia los archivos estáticos de carga y el núcleo (*Kernel*) indispensable para el arranque del hardware.
 
+---
+
+## 📝 4. Gestión de Archivos, Creación de Directorios y Edición por Consola
+Se procedió a simular un escenario de estructuración de datos corporativos dentro del entorno del servidor, adquiriendo destreza en el aprovisionamiento de carpetas y la manipulación de flujos de texto sin interfaz gráfica:
+
+* **Aprovisionamiento de Estructuras (`mkdir`):** Se utilizó el comando **`mkdir datos_empresa`** dentro del entorno del Home de usuario (`~`) para generar un contenedor lógico aislado destinado a albergar la documentación de los departamentos.
+* **Edición de Ficheros en Caliente (`nano`):** Se dominó el uso del editor integrado **GNU Nano** mediante el comando `nano informe_contabilidad.txt`, asimilando las directivas de control por teclado (`Ctrl+O` para la persistencia de datos en disco y `Ctrl+X` para la interrupción/salida segura del editor).
+* **Volcado de Flujos por Terminal (`cat`):** Se implementó el comando **`cat`** para realizar lecturas rápidas de la carga útil del fichero directamente sobre la salida estándar de la consola, optimizando las auditorías de contenido sin necesidad de invocar editores interactivos.
+
+
 
