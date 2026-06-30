@@ -15,3 +15,17 @@ Durante el despliegue del asistente de instalación por consola, se aplicaron di
 * **Identidad de Red (Hostname):** El servidor fue bautizado bajo la nomenclatura corporativa **`srv-linux-01`**, estableciendo su nombre único de resolución de identidad dentro del dominio local de la oficina.
 * **Seguridad y Control Remoto (OpenSSH):** Se realizó la instalación obligatoria del demonio **OpenSSH Server (`[X] Install OpenSSH server`)**. Esta configuración es crítica en la administración de sistemas moderna, habilitando al departamento de TI el acceso remoto seguro por consola desde las estaciones de trabajo de soporte, eliminando la necesidad de interacción física directa con el hardware alojado en el CPD (Centro de Procesamiento de Datos).
 
+---
+
+## 📂 3. Estructura de Directorios Estándar (FHS) y Comandos de Navegación
+Se procedió a realizar una auditoría de reconocimiento sobre el árbol de almacenamiento base del servidor, validando la jerarquía de ficheros estándar en sistemas GNU/Linux y asimilando los comandos esenciales de control de terminal:
+
+* **Control de Ubicación y Listado:** Se implementaron los comandos nucleares **`pwd`** (*Print Working Directory*) para monitorizar de forma exacta la ruta absoluta actual en disco, y **`ls`** junto con su modificador avanzado **`ls -la`** para auditar atributos detallados, permisos, marcas de tiempo y ficheros ocultos del entorno.
+* **Técnicas de Desplazamiento:** Se dominó el uso de **`cd ..`** para realizar una regresión hacia directorios padre, y el atajo de teletransporte global **`cd`** (a secas) para forzar un retorno inmediato hacia el directorio "home" personal (`~`), optimizando los tiempos de respuesta en consola.
+* **Mapeo del Núcleo del Servidor (`/`):** Se mapearon los directorios más críticos del estándar FHS para la gestión empresarial:
+  * `/etc`: Repositorio neurálgico que aloja los ficheros de configuración globales del sistema y demonios de red (ej. SSH, interfaces).
+  * `/var`: Destinado a almacenar información de tamaño altamente mutable, albergando registros de eventos (*logs*) críticos del servidor y bases de datos corporativas.
+  * `/bin` y `/sbin`: Directorios binarios que consolidan las herramientas y comandos esenciales ejecutables del propio sistema operativo.
+  * `/boot`: Almacén que custodia los archivos estáticos de carga y el núcleo (*Kernel*) indispensable para el arranque del hardware.
+
+
