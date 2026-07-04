@@ -45,6 +45,14 @@ Se implementó la estructura de personal de la empresa dentro del servidor, apli
 * **Seguridad de Credenciales (`passwd`):** Se fijó el entorno criptográfico de autenticación mediante el comando **`sudo passwd contable1`**, asegurando que la cuenta nazca activa y protegida bajo contraseña.
 * **Auditoría de Identidades (`id`):** Se ejecutó el comando de control **`id contable1`** para validar la consistencia en los identificadores de seguridad (UID/GID), ratificando la integración total del usuario en el sistema.
 
+## 🔐 6. Fase 11: Seguridad, Permisos Avanzados y Traspaso de Propiedad (chmod / chown)
+Se auditó y corrigió una vulnerabilidad de exposición de datos en el sistema de archivos del servidor, aplicando directivas estrictas de control de accesos bajo el estándar de privilegios mínimos:
+
+* **Traspaso de Propiedad Orgánica (`chown`):** Mediante la directiva avanzada `sudo chown contable1:contabilidad informe_contabilidad.txt`, se retiraron los derechos de propiedad al equipo de soporte y se asignó formalmente el fichero al usuario legítimo (`contable1`) junto con su grupo departamental (`contabilidad`).
+* **Modificación de Máscara de Permisos Octal (`chmod`):** Se erradicó el acceso de lectura al resto del mundo aplicando la máscara restrictiva `sudo chmod 660 informe_contabilidad.txt`. Esta configuración reescribió los bits de control pasándolos de `-rw-rw-r--` a `-rw-rw----`.
+* **Resultado del Blindaje:** El propietario y los miembros del departamento financiero consolidan permisos de lectura y modificación del informe (`rw-`), mientras que cualquier otro usuario no autorizado del servidor queda completamente bloqueado frente a flujos de lectura o manipulación.
+
+
 
 
 
