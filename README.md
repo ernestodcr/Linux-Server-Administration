@@ -66,6 +66,15 @@ Se establecieron las metodologías de soporte de nivel avanzado para auditar los
 * **Auditoría de Almacenamiento Estándar (`df -h`):** Se ejecutó el comando de análisis de disco bajo formato legible para humanos, localizando con éxito la partición base del Kernel (`/dev/sda2` en `/boot`) y el volumen lógico dinámico raíz (`/dev/mapper/ubuntu--vg-ubuntu--lv` sobre `/`), controlando los umbrales de ocupación (49% actual).
 * **Control de Memoria Volátil (`free -m`):** Se asimiló el comando de diagnóstico rápido para obtener un volcado instantáneo en Megabytes de la memoria RAM física activa, segmentando el espacio libre disponible frente a los búferes de intercambio (*Swap*) del servidor.
 
+## 📡 9. Gestión de Paquetes e Instalación de Software Avanzado (apt / htop)
+Se procedió a implementar la administración y aprovisionamiento de software del servidor conectando el nodo con los repositorios oficiales de la distribución en internet, optimizando el entorno con herramientas avanzadas de diagnóstico:
+
+* **Sincronización de Repositorios (`apt update`):** Se utilizó la directiva con privilegios elevados `sudo apt update` para descargar los índices y metadatos de paquetes más modernos desde los servidores espejo de España. Esta acción actualiza el catálogo interno de dependencias garantizando la posterior instalación de parches ciberseguros.
+* **Aprovisionamiento Automatizado (`apt install`):** Se ejecutó la instalación de software mediante la orden `sudo apt install -y htop`. El parámetro `-y` optimizó el despliegue forzando la aceptación de consumo de disco por adelantado sin requerir pausas interactivas.
+* **Monitorización Vitaminada (`htop`):** Se desplegó la herramienta gráfica interactiva `htop`, sustituyendo al clásico monitor plano `top`. Este panel permite auditar a todo color el rendimiento segmentado de las 2 vCPUs, la huella exacta en Megabytes de la memoria RAM activa y la gestión interactiva de los identificadores de procesos (PID).
+
+
+
 
 
 
