@@ -1,4 +1,4 @@
-# 🐧 Advanced Linux Server Administration Portfolio
+# 🐧 Linux Server Administration
 Este repositorio contiene el laboratorio práctico de despliegue, configuración de servicios de red, seguridad y administración avanzada de entornos de servidor basados en sistemas operativos de código abierto.
 
 ## 🚀 1. Despliegue y Arquitectura Base de Servidores Linux
@@ -72,6 +72,13 @@ Se procedió a implementar la administración y aprovisionamiento de software de
 * **Sincronización de Repositorios (`apt update`):** Se utilizó la directiva con privilegios elevados `sudo apt update` para descargar los índices y metadatos de paquetes más modernos desde los servidores espejo de España. Esta acción actualiza el catálogo interno de dependencias garantizando la posterior instalación de parches ciberseguros.
 * **Aprovisionamiento Automatizado (`apt install`):** Se ejecutó la instalación de software mediante la orden `sudo apt install -y htop`. El parámetro `-y` optimizó el despliegue forzando la aceptación de consumo de disco por adelantado sin requerir pausas interactivas.
 * **Monitorización Vitaminada (`htop`):** Se desplegó la herramienta gráfica interactiva `htop`, sustituyendo al clásico monitor plano `top`. Este panel permite auditar a todo color el rendimiento segmentado de las 2 vCPUs, la huella exacta en Megabytes de la memoria RAM activa y la gestión interactiva de los identificadores de procesos (PID).
+
+## 📡 10. Configuración de Red Estática Empresarial (Netplan)
+Se configuró el servidor para usar una dirección IP fija en lugar de una automática, garantizando que el equipo sea localizable siempre en el mismo punto de la red local:
+
+* **Archivo de Configuración (`/etc/netplan`):** Se editó el fichero `00-installer-config.yaml` desactivando el protocolo automático (DHCP) e introduciendo manualmente la IP fija del servidor, la puerta de enlace del router y los servidores DNS.
+* **Aplicación y Control (`netplan apply`):** Se ejecutó el comando de refresco de red para activar las nuevas reglas en la tarjeta de interfaz de red, validando el éxito del direccionamiento mediante un test de conectividad externa con resultado óptimo.
+
 
 
 
