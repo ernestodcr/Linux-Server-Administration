@@ -79,6 +79,13 @@ Se configuró el servidor para usar una dirección IP fija en lugar de una autom
 * **Archivo de Configuración (`/etc/netplan`):** Se editó el fichero `00-installer-config.yaml` desactivando el protocolo automático (DHCP) e introduciendo manualmente la IP fija del servidor, la puerta de enlace del router y los servidores DNS.
 * **Aplicación y Control (`netplan apply`):** Se ejecutó el comando de refresco de red para activar las nuevas reglas en la tarjeta de interfaz de red, validando el éxito del direccionamiento mediante un test de conectividad externa con resultado óptimo.
 
+## 🔄 11. Control de Servicios y Demonios del Sistema (Systemctl)
+Se aprendió a controlar los programas invisibles que se ejecutan en segundo plano en el servidor, asegurando que las herramientas críticas estén operativas:
+
+* **Gestión del Demonio SSH (`systemctl`):** Se utilizó la herramienta de control para auditar el estado del servidor OpenSSH. Tras detectar que el software se encontraba inactivo por defecto (`inactive`), se forzó su encendido manual mediante la directiva `sudo systemctl start ssh`.
+* **Validación de Estado Operativo:** Se comprobó con éxito la activación del servicio mediante el reporte gráfico verde `active (running)`, dejando el canal de comunicaciones listo para recibir conexiones remotas en la infraestructura.
+
+
 
 
 
