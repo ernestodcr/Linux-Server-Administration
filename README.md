@@ -91,6 +91,13 @@ Se consolidó el hito de administración remota de la infraestructura, logrando 
 * **Túnel de Reenvío de Puertos:** Ante el aislamiento de la Red NAT, se configuró una regla de Port Forwarding en VirtualBox, enlazando el puerto libre `2222` de la máquina real (Anfitrión) con el puerto estándar `22` del servidor (Invitado).
 * **Acceso SSH Exitoso (`localhost`):** Se ejecutó la conexión remota desde el símbolo del sistema de Windows mediante la directiva `ssh -p 2222 soporte-it@127.0.0.1`. Se aceptó la huella de seguridad criptográfica y se validaron las credenciales corporativas, tomando el control total del nodo a través de la red local.
 
+## 🛡️ 13. Auditoría de Ciberseguridad e Historial de Eventos (Journalctl)
+Se implementaron técnicas de auditoría forense y control de accesos sobre la caja negra del sistema de archivos, garantizando el rastreo total de las conexiones entrantes al servidor:
+
+* **Auditoría de Acceso Remoto (`journalctl`):** Se utilizó el comando con privilegios elevados `sudo journalctl -u ssh` para filtrar y aislar exclusivamente los registros de eventos generados por el demonio OpenSSH.
+* **Trazabilidad Forense de Seguridad:** Se analizó de forma exitosa el historial cronológico, localizando las marcas de tiempo exactas del levantamiento del puerto corporativo y las líneas críticas de validación de contraseñas (`Accepted password`), ratificando un entorno ciberseguro libre de intrusiones o ataques de fuerza bruta.
+
+
 
 
 
