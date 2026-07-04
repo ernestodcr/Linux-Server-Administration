@@ -52,14 +52,20 @@ Se auditó y corrigió una vulnerabilidad de exposición de datos en el sistema 
 * **Modificación de Máscara de Permisos Octal (`chmod`):** Se erradicó el acceso de lectura al resto del mundo aplicando la máscara restrictiva `sudo chmod 660 informe_contabilidad.txt`. Esta configuración reescribió los bits de control pasándolos de `-rw-rw-r--` a `-rw-rw----`.
 * **Resultado del Blindaje:** El propietario y los miembros del departamento financiero consolidan permisos de lectura y modificación del informe (`rw-`), mientras que cualquier otro usuario no autorizado del servidor queda completamente bloqueado frente a flujos de lectura o manipulación.
 
----
-
 ## 🧹 7. Comandos de Mantenimiento Avanzado y Ciclo de Vida de Ficheros (cp / mv / rm)
 Se ejecutaron operaciones esenciales de mantenimiento de almacenamiento y gestión de datos, asimilando el comportamiento del sistema operativo ante duplicaciones con elevación de privilegios y borrados definitivos:
 
 * **Duplicación Segura (`cp`):** Tras validar el aislamiento del fichero original, se utilizó la directiva `sudo cp informe_contabilidad.txt copia_seguridad.txt`. Al invocar privilegios administrativos, el nuevo fichero heredó de forma lógica la propiedad del usuario raíz (`root:root`).
 * **Reubicación de Volúmenes (`mv`):** Se aprovisionó una estructura dedicada mediante `mkdir backup` y se procedió a reubicar el respaldo utilizando el comando `sudo mv copia_seguridad.txt backup/`, aislando la copia del directorio de producción sin alterar sus metadatos ni permisos de origen.
 * **Destrucción Permanente de Datos (`rm`):** Se simuló la obsolescencia de los datos ejecutando la orden irreversible `sudo rm backup/copia_seguridad.txt`. Al carecer de entorno gráfico con papelera de reciclaje, el sistema liberó los bloques de almacenamiento en disco de forma inmediata, consolidando una limpieza absoluta auditada mediante `total 0`.
+
+## 📉 8. Monitorización de Rendimiento y Análisis de Almacenamiento (top / df / free)
+Se establecieron las metodologías de soporte de nivel avanzado para auditar los signos vitales, el rendimiento del hardware y la capacidad de almacenamiento del nodo en tiempo real:
+
+* **Administración de Procesos Activos (`top`):** Se implementó el monitor dinámico interactivo para auditar el consumo porcentual de CPU, la asignación de memoria e identificar los identificadores de procesos (PID) con mayor demanda de recursos en producción.
+* **Auditoría de Almacenamiento Estándar (`df -h`):** Se ejecutó el comando de análisis de disco bajo formato legible para humanos, localizando con éxito la partición base del Kernel (`/dev/sda2` en `/boot`) y el volumen lógico dinámico raíz (`/dev/mapper/ubuntu--vg-ubuntu--lv` sobre `/`), controlando los umbrales de ocupación (49% actual).
+* **Control de Memoria Volátil (`free -m`):** Se asimiló el comando de diagnóstico rápido para obtener un volcado instantáneo en Megabytes de la memoria RAM física activa, segmentando el espacio libre disponible frente a los búferes de intercambio (*Swap*) del servidor.
+
 
 
 
