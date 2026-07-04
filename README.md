@@ -85,6 +85,13 @@ Se aprendió a controlar los programas invisibles que se ejecutan en segundo pla
 * **Gestión del Demonio SSH (`systemctl`):** Se utilizó la herramienta de control para auditar el estado del servidor OpenSSH. Tras detectar que el software se encontraba inactivo por defecto (`inactive`), se forzó su encendido manual mediante la directiva `sudo systemctl start ssh`.
 * **Validación de Estado Operativo:** Se comprobó con éxito la activación del servicio mediante el reporte gráfico verde `active (running)`, dejando el canal de comunicaciones listo para recibir conexiones remotas en la infraestructura.
 
+## 🖥️ 12. Conexión Remota Segura desde el Equipo Real (SSH / Port Forwarding)
+Se consolidó el hito de administración remota de la infraestructura, logrando gobernar el servidor Linux a distancia desde la consola de comandos de Windows sin interactuar con el hipervisor:
+
+* **Túnel de Reenvío de Puertos:** Ante el aislamiento de la Red NAT, se configuró una regla de Port Forwarding en VirtualBox, enlazando el puerto libre `2222` de la máquina real (Anfitrión) con el puerto estándar `22` del servidor (Invitado).
+* **Acceso SSH Exitoso (`localhost`):** Se ejecutó la conexión remota desde el símbolo del sistema de Windows mediante la directiva `ssh -p 2222 soporte-it@127.0.0.1`. Se aceptó la huella de seguridad criptográfica y se validaron las credenciales corporativas, tomando el control total del nodo a través de la red local.
+
+
 
 
 
